@@ -22,8 +22,8 @@ func main() {
 		panic(err)
 	}
 
-	migrations.UsersMigrate(db)
-	api.Users(db)
+	migrations.AlbumsMigrate(db)
+	api.Albums(db)
 
 	fmt.Println("Server is running on port 8080...")
 	http.ListenAndServe(":8080", nil)
