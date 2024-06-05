@@ -22,7 +22,12 @@ func AlbumsMigrate(db *sql.DB) {
 		panic(err)
 	}
 
-	_, err = db.Exec("CREATE TABLE albums (album_id serial PRIMARY KEY, album_title VARCHAR(50),album_artist VARCHAR(50),album_price INTEGER);")
+	_, err = db.Exec(`CREATE TABLE albums (
+		album_id serial PRIMARY KEY,
+		 album_title VARCHAR(50),
+		 album_artist VARCHAR(50),
+		 album_price INTEGER
+		 );`)
 
 	if err != nil {
 		panic(err)
@@ -34,7 +39,7 @@ func AlbumsMigrate(db *sql.DB) {
 		VALUES
 			('Blue Train','John Coltrane',55),
 			('Jeru','Gerry Mulligan',22),
-			('Sarah Vaughan and Clifford Brown','Sarah Vaughan',10),
+			('Sarah Vaughan and Clifford Brown','Sarah Vaughan',10)
 	`)
 
 	if err != nil {
