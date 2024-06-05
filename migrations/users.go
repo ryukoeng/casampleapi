@@ -13,25 +13,25 @@ func AlbumsMigrate(db *sql.DB) {
 		panic(err)
 	}
 
-	// users テーブルが存在する場合は処理終了
-	if count >= 1 {
-		return
-	}
+	// // users テーブルが存在する場合は処理終了
+	// if count >= 1 {
+	// 	return
+	// }
 
-	if err != nil {
-		panic(err)
-	}
+	// if err != nil {
+	// 	panic(err)
+	// }
 
-	_, err = db.Exec(`CREATE TABLE albums (
-		album_id serial PRIMARY KEY,
-		 album_title VARCHAR(50),
-		 album_artist VARCHAR(50),
-		 album_price INTEGER
-		 );`)
+	// _, err = db.Exec(`CREATE TABLE albums (
+	// 	album_id serial PRIMARY KEY,
+	// 	 album_title VARCHAR(50),
+	// 	 album_artist VARCHAR(50),
+	// 	 album_price INTEGER
+	// 	 );`)
 
-	if err != nil {
-		panic(err)
-	}
+	// if err != nil {
+	// 	panic(err)
+	// }
 
 	_, err = db.Exec(`
 		INSERT INTO
